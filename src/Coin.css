@@ -1,0 +1,55 @@
+/* Coin.css */
+
+.coin {
+    display: grid;
+    grid-template-columns: 50px 2fr 1fr 1fr;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .coin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .coin img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+  
+  .coin h1 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .coin p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .coin p:first-of-type {
+    font-weight: bold;
+    color: #666;
+    text-align: left;
+  }
+  
+  .coin p:last-of-type {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+  }
+  

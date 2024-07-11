@@ -1,7 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Coin from './Coin';
+import './App.css';
 
 function App() {
   const [coindata, setCoindata] = useState([]);
@@ -37,12 +38,8 @@ function App() {
       </div>
       <div className='coins'>
       {filteredCoins.map((coin) => (
-          <div key={coin.id} className='coin'>
-            <h2>{coin.name}</h2>
-            <img  style = {{ width: '100px', height: '100px' }} src={coin.image} alt={coin.name} />
-            <p>{coin.symbol.toUpperCase()}</p>
-            <p>Price: ${coin.current_price}</p>
-          </div>
+          <Coin
+            key={coin.id} id={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.current_price}/>
         ))}
       </div>
     </div>
