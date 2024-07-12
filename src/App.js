@@ -9,6 +9,7 @@ function App() {
   const [search, setSearch] = useState("")
 
   const fetchData = async () => {
+    try{
     const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets',
       {
         params: {
@@ -21,14 +22,18 @@ function App() {
       }
     );
     setCoindata(response.data);
+  } catch(error){
+    console.error(error);
   }
+  };
+
 
   useEffect(() => {
     fetchData();
   }, []);
  
   const filteredCoins = coindata.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
-  
+
   return (
     <div className="App">
       <h1>Largest Crypto MarketPlace</h1>
@@ -37,10 +42,15 @@ function App() {
         <button className="search-button">Search</button>
       </div>
       <div className='coins'>
-      {filteredCoins.map((coin) => (
+      
+
+      {filteredCoins?(filteredCoins.map((coin) => (
           <Coin
             key={coin.id} id={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.current_price}/>
-        ))}
+        ))):(
+          <h1 style={{color:"white"}}>no item found</h1>
+        )
+        }
       </div>
     </div>
   );
