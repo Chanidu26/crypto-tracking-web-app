@@ -4,21 +4,19 @@
 /* Style the body */
 body {
   margin: 0;
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
+  padding: 0;
+  box-sizing: border-box;
   background:  rgba(9,15,46,1);
   color: white;
   align-items: center;
   justify-content: center;
+  font-family: sans-serif;
   
 }
 
 /* Ensure code font is styled correctly */
 code {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* Additional styles for the App container */
@@ -26,4 +24,5 @@ code {
   text-align: center;
   max-width: 80%;
   margin: 0 auto;
+  min-height: 100vh;
 }

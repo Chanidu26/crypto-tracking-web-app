@@ -27,6 +27,10 @@ function App() {
   }
   };
 
+  const truncatetotwodecimals = (value) => {
+    return Math.trunc(value * 100) / 100
+  }
+
 
   useEffect(() => {
     fetchData();
@@ -46,7 +50,7 @@ function App() {
 
       {filteredCoins?(filteredCoins.map((coin) => (
           <Coin
-            key={coin.id} id={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={coin.current_price}/>
+            key={coin.id} id={coin.id} name={coin.name} image={coin.image} symbol={coin.symbol} price={truncatetotwodecimals(coin.current_price)}/>
         ))):(
           <h1 style={{color:"white"}}>no item found</h1>
         )

@@ -1,4 +1,6 @@
-
+h1{
+    font-family: sans-serif;
+}
 .search{
     height: 60px;
     display: flex;
@@ -27,4 +29,15 @@
 }
 .coins{
     margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+    .coins{
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .search{
+        
+        width: 400px;
+    }
 }

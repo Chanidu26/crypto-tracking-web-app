@@ -17,7 +17,7 @@
   .coin:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #afadad;
+    background-color: #d8d8d8;
   }
   
   .coin img {
@@ -54,4 +54,15 @@
     color: #333;
     text-align: right;
   }
+@media screen and (max-width: 768px) {
+    .coin h1{
+
+        padding-left: 0px;
+        font-size: 14px;
+    }
+    .coin p{
+
+        font-size: 12px;
+    }
+}
   
