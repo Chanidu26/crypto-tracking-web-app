@@ -2,11 +2,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Coin from './Coin';
+import Loading from './Loading';
 import './App.css';
 
 function App() {
   const [coindata, setCoindata] = useState([]);
   const [search, setSearch] = useState("")
+  const [loading ,setloading] = useState(false)
 
   const fetchData = async () => {
     try{
@@ -22,6 +24,7 @@ function App() {
       }
     );
     setCoindata(response.data);
+    setloading(false);
   } catch(error){
     console.error(error);
   }
@@ -33,6 +36,7 @@ function App() {
 
 
   useEffect(() => {
+    setloading(true);
     fetchData();
   }, []);
  
@@ -45,7 +49,7 @@ function App() {
         <input type="text" placeholder="Search..." className="search-bar" onChange={(e)=>setSearch(e.target.value) } />
         <button className="search-button">Search</button>
       </div>
-      <div className='coins'>
+       {loading? (<Loading />):(<div className='coins'>
       
 
       {filteredCoins?(filteredCoins.map((coin) => (
@@ -56,6 +60,7 @@ function App() {
         )
         }
       </div>
+)}
     </div>
   );
 }
