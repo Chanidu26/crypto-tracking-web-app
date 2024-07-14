@@ -1,9 +1,10 @@
 import React from 'react'
+import Spinner from 'react-bootstrap/Spinner';
 
 const Loading = () => {
   return (
     <div className='Loading'>
-        <h2>loading...please wait</h2>
+         <Spinner animation="grow" variant="primary" />
     </div>
   )
 }
