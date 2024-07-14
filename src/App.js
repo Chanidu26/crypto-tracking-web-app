@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Coin from './Coin';
 import Loading from './Loading';
 import './App.css';
+import Button from 'react-bootstrap/Button';
 
 function App() {
   const [coindata, setCoindata] = useState([]);
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <Button variant="primary">Primary</Button>{' '}
       <h1>Largest Crypto MarketPlace</h1>
       <div className='search'>
         <input type="text" placeholder="Search..." className="search-bar" onChange={(e)=>setSearch(e.target.value) } />
